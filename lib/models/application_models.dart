@@ -18,13 +18,30 @@ class ApiResponse with _$ApiResponse {
 //
 //     final subcriptions = subcriptionsFromJson(jsonString);
 
-List<Subcriptions> subcriptionsFromJson(String str) => List<Subcriptions>.from(
-    json.decode(str).map((x) => Subcriptions.fromJson(x)));
+Subcriptions subcriptionsFromJson(String str) =>
+    Subcriptions.fromJson(json.decode(str));
 
-String subcriptionsToJson(List<Subcriptions> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String subcriptionsToJson(Subcriptions data) => json.encode(data.toJson());
 
 class Subcriptions {
+  List<Subscription> subscriptions;
+
+  Subcriptions({
+    required this.subscriptions,
+  });
+
+  factory Subcriptions.fromJson(Map<String, dynamic> json) => Subcriptions(
+        subscriptions: List<Subscription>.from(
+            json["subscriptions"].map((x) => Subscription.fromJson(x))),
+      );
+
+  Map<String, dynamic> toJson() => {
+        "subscriptions":
+            List<dynamic>.from(subscriptions.map((x) => x.toJson())),
+      };
+}
+
+class Subscription {
   int id;
   String name;
   int price;
@@ -32,7 +49,7 @@ class Subcriptions {
   List<String> features;
   int duration;
 
-  Subcriptions({
+  Subscription({
     required this.id,
     required this.name,
     required this.price,
@@ -41,7 +58,7 @@ class Subcriptions {
     required this.duration,
   });
 
-  factory Subcriptions.fromJson(Map<String, dynamic> json) => Subcriptions(
+  factory Subscription.fromJson(Map<String, dynamic> json) => Subscription(
         id: json["id"],
         name: json["name"],
         price: json["price"],
