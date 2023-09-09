@@ -21,7 +21,7 @@ ApiResponse _$ApiResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ApiResponse {
   int? get statusCode => throw _privateConstructorUsedError;
-  List<dynamic> get data => throw _privateConstructorUsedError;
+  dynamic get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $ApiResponseCopyWith<$Res> {
           ApiResponse value, $Res Function(ApiResponse) then) =
       _$ApiResponseCopyWithImpl<$Res, ApiResponse>;
   @useResult
-  $Res call({int? statusCode, List<dynamic> data});
+  $Res call({int? statusCode, dynamic data});
 }
 
 /// @nodoc
@@ -52,17 +52,17 @@ class _$ApiResponseCopyWithImpl<$Res, $Val extends ApiResponse>
   @override
   $Res call({
     Object? statusCode = freezed,
-    Object? data = null,
+    Object? data = freezed,
   }) {
     return _then(_value.copyWith(
       statusCode: freezed == statusCode
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
               as int?,
-      data: null == data
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as dynamic,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$_ApiResponseCopyWith<$Res>
       __$$_ApiResponseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? statusCode, List<dynamic> data});
+  $Res call({int? statusCode, dynamic data});
 }
 
 /// @nodoc
@@ -90,17 +90,17 @@ class __$$_ApiResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? statusCode = freezed,
-    Object? data = null,
+    Object? data = freezed,
   }) {
     return _then(_$_ApiResponse(
       statusCode: freezed == statusCode
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
               as int?,
-      data: null == data
-          ? _value._data
+      data: freezed == data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as dynamic,
     ));
   }
 }
@@ -108,8 +108,7 @@ class __$$_ApiResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ApiResponse implements _ApiResponse {
-  _$_ApiResponse({this.statusCode = 500, required final List<dynamic> data})
-      : _data = data;
+  _$_ApiResponse({this.statusCode = 500, required this.data});
 
   factory _$_ApiResponse.fromJson(Map<String, dynamic> json) =>
       _$$_ApiResponseFromJson(json);
@@ -117,13 +116,8 @@ class _$_ApiResponse implements _ApiResponse {
   @override
   @JsonKey()
   final int? statusCode;
-  final List<dynamic> _data;
   @override
-  List<dynamic> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+  final dynamic data;
 
   @override
   String toString() {
@@ -137,13 +131,13 @@ class _$_ApiResponse implements _ApiResponse {
             other is _$_ApiResponse &&
             (identical(other.statusCode, statusCode) ||
                 other.statusCode == statusCode) &&
-            const DeepCollectionEquality().equals(other._data, _data));
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, statusCode, const DeepCollectionEquality().hash(_data));
+      runtimeType, statusCode, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
@@ -160,9 +154,8 @@ class _$_ApiResponse implements _ApiResponse {
 }
 
 abstract class _ApiResponse implements ApiResponse {
-  factory _ApiResponse(
-      {final int? statusCode,
-      required final List<dynamic> data}) = _$_ApiResponse;
+  factory _ApiResponse({final int? statusCode, required final dynamic data}) =
+      _$_ApiResponse;
 
   factory _ApiResponse.fromJson(Map<String, dynamic> json) =
       _$_ApiResponse.fromJson;
@@ -170,7 +163,7 @@ abstract class _ApiResponse implements ApiResponse {
   @override
   int? get statusCode;
   @override
-  List<dynamic> get data;
+  dynamic get data;
   @override
   @JsonKey(ignore: true)
   _$$_ApiResponseCopyWith<_$_ApiResponse> get copyWith =>

@@ -9,28 +9,28 @@ part 'application_models.g.dart';
 class ApiResponse with _$ApiResponse {
   factory ApiResponse({
     @Default(500) int? statusCode,
-    required List data,
+    required dynamic data,
   }) = _ApiResponse;
   factory ApiResponse.fromJson(Map<String, dynamic> json) =>
       _$ApiResponseFromJson(json);
 }
 // To parse this JSON data, do
 //
-//     final subcriptions = subcriptionsFromJson(jsonString);
+//     final subscriptions = subscriptionsFromJson(jsonString);
 
-Subcriptions subcriptionsFromJson(String str) =>
-    Subcriptions.fromJson(json.decode(str));
+Subscriptions subscriptionsFromJson(String str) =>
+    Subscriptions.fromJson(json.decode(str));
 
-String subcriptionsToJson(Subcriptions data) => json.encode(data.toJson());
+String subscriptionsToJson(Subscriptions data) => json.encode(data.toJson());
 
-class Subcriptions {
+class Subscriptions {
   List<Subscription> subscriptions;
 
-  Subcriptions({
+  Subscriptions({
     required this.subscriptions,
   });
 
-  factory Subcriptions.fromJson(Map<String, dynamic> json) => Subcriptions(
+  factory Subscriptions.fromJson(Map<String, dynamic> json) => Subscriptions(
         subscriptions: List<Subscription>.from(
             json["subscriptions"].map((x) => Subscription.fromJson(x))),
       );

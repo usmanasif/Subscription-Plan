@@ -9,7 +9,7 @@ part of 'application_models.dart';
 _$_ApiResponse _$$_ApiResponseFromJson(Map<String, dynamic> json) =>
     _$_ApiResponse(
       statusCode: json['statusCode'] as int? ?? 500,
-      data: json['data'] as List<dynamic>,
+      data: json['data'],
     );
 
 Map<String, dynamic> _$$_ApiResponseToJson(_$_ApiResponse instance) =>
