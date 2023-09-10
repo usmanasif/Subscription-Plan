@@ -3,7 +3,9 @@
 Subscription Plan mocks the Adobe XD Subscription Plan Screen Designed With Pixel Perfect Designing.
 
 ## Screenshot
-![alt text](https://user-images.githubusercontent.com/473630/266867936-53f189de-51b0-4490-a335-31238b04c696.png)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/473630/266867936-53f189de-51b0-4490-a335-31238b04c696.png" width="200" height="400" />
+</p>
 
 ## Usage
 
