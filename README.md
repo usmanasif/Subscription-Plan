@@ -1,7 +1,6 @@
-# Flutter MVVM Starter
+# Subscription-Plan
 
-Create scalable Flutter apps with MVVM architecture, state management & dependency injection using the [Stacked Flutter Framework](https://stacked.filledstacks.com/).
-
+Subscription Plan mocks the Adobe XD Subscription Plan Screen Designed With Pixel Perfect Designing.
 ## Usage
 
 1. Clone the repository locally or use the template for your own projects:
