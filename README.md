@@ -49,5 +49,12 @@ lib/
 
 
 ## Custom Features
-Custom dialogs added to make user experience seemless
+Custom dialogs added to make user experience seemless.
+Error handling to handle exceptions in case of API failure.
+db.json file contains the JSON Data that is being fetched from mocki.io server.
+Refresh handlers to call the API.
+FontAwesome and Ionicons added to the subscriptions.
+Built in navigation service. No custom handlers required.
+
+
 
