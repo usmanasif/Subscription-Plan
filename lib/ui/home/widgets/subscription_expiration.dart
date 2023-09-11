@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_stacked_starter/ui/home/home_viewmodel.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:stacked/stacked.dart';
 
 import '../../../utils/app_text.dart';
 import '../../../utils/ui_helpers.dart';
 
-class SubscriptionDetails extends StatelessWidget {
+class SubscriptionDetails extends ViewModelWidget<HomeViewModel> {
   const SubscriptionDetails({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, HomeViewModel viewModel) {
     return Padding(
       padding: EdgeInsets.only(top: 40.h),
       child: Column(
@@ -29,7 +31,7 @@ class SubscriptionDetails extends StatelessWidget {
           ),
           verticalSpaceRegular,
           Text(
-            "PREMIUM PLAN",
+            "${viewModel.subscriptions?.plan} Plan",
             style: kRubikText.copyWith(
                 fontWeight: FontWeight.w600,
                 color: Colors.white,
@@ -51,7 +53,7 @@ class SubscriptionDetails extends StatelessWidget {
                 ),
                 horizontalSpaceSmall,
                 Text(
-                  "54 Days Left",
+                  "${viewModel.subscriptions?.daysLeft} Days Left",
                   style: kRubikText.copyWith(
                       fontWeight: FontWeight.bold,
                       fontSize: 16.sp,
@@ -64,7 +66,7 @@ class SubscriptionDetails extends StatelessWidget {
           SizedBox(
             width: 250,
             child: Text(
-              "Your premium plan will expire on May 22, 2022",
+              "Your premium plan will expire on ${viewModel.subscriptions?.date}",
               textAlign: TextAlign.center,
               style: kRubikText.copyWith(
                   fontWeight: FontWeight.w300,

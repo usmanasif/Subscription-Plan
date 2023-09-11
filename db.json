@@ -1,4 +1,7 @@
 {
+  "plan": "Premium",
+  "date": "22nd May,2023",
+  "daysLeft": 54,
   "subscriptions":[
   {
     "id": 1,
@@ -21,7 +24,7 @@
     "name": "Premium",
     "price": 112,
     "currency": "$",
-    "features": ["Enterprise Managed Users","User Provisioning","Audit Log API"],
+    "features": ["Enterprise Managed Users","User Provisioning","Audit Log API","Unlimited API Calls","Weekly Discounts"],
     "duration": 6
   }
 ]

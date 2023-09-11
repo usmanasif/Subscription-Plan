@@ -15,13 +15,24 @@ class PlansList extends ViewModelWidget<HomeViewModel> {
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
       itemCount: viewModel.subscriptions?.subscriptions.length,
-      itemBuilder: (context, index) => SubScriptionTile(
-        icon: viewModel.getIcon(index),
-        currency: viewModel.subscriptions?.subscriptions[index].currency ?? '',
-        duration: viewModel.subscriptions?.subscriptions[index].duration ?? 0,
-        features: viewModel.subscriptions?.subscriptions[index].features ?? [],
-        name: viewModel.subscriptions?.subscriptions[index].name ?? '',
-        price: viewModel.subscriptions?.subscriptions[index].price ?? 0,
+      itemBuilder: (context, index) => GestureDetector(
+        onTap: () {
+          viewModel.setSelectedIndex(index);
+        },
+        child: SubScriptionTile(
+          borderColor: viewModel.selectedIndex == index
+              ? Colors.white
+              : const Color(0xFFEBEBF0),
+          width: viewModel.selectedIndex == index ? 2 : 0.1,
+          icon: viewModel.getIcon(index),
+          currency:
+              viewModel.subscriptions?.subscriptions[index].currency ?? '',
+          duration: viewModel.subscriptions?.subscriptions[index].duration ?? 0,
+          features:
+              viewModel.subscriptions?.subscriptions[index].features ?? [],
+          name: viewModel.subscriptions?.subscriptions[index].name ?? '',
+          price: viewModel.subscriptions?.subscriptions[index].price ?? 0,
+        ),
       ),
     );
   }

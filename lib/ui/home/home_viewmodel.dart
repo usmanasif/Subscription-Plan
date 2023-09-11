@@ -16,7 +16,8 @@ class HomeViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   Subscriptions? _subscriptions;
   Subscriptions? get subscriptions => _subscriptions;
-
+  int _selectedIndex = 0;
+  int get selectedIndex => _selectedIndex;
   Future<void> getSubscriptions({bool setViewToBusy = true}) async {
     try {
       _subscriptions =
@@ -41,5 +42,10 @@ class HomeViewModel extends BaseViewModel {
     } else {
       return Ionicons.diamond;
     }
+  }
+
+  void setSelectedIndex(int index) {
+    _selectedIndex = index;
+    notifyListeners();
   }
 }

@@ -14,15 +14,18 @@ class SubScriptionTile extends ViewModelWidget<HomeViewModel> {
   final List<String> features;
   final int duration;
   final IconData icon;
-  const SubScriptionTile({
-    super.key,
-    required this.icon,
-    required this.name,
-    required this.price,
-    required this.currency,
-    required this.features,
-    required this.duration,
-  });
+  final Color borderColor;
+  final double width;
+  const SubScriptionTile(
+      {super.key,
+      required this.icon,
+      required this.name,
+      required this.price,
+      required this.currency,
+      required this.features,
+      required this.duration,
+      required this.borderColor,
+      required this.width});
 
   @override
   Widget build(BuildContext context, HomeViewModel viewModel) {
@@ -34,7 +37,7 @@ class SubScriptionTile extends ViewModelWidget<HomeViewModel> {
           margin: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5.r),
-            border: Border.all(color: const Color(0xFFEBEBF0), width: 0.1),
+            border: Border.all(color: borderColor, width: width),
           ),
           child: Column(
             children: [
@@ -42,7 +45,6 @@ class SubScriptionTile extends ViewModelWidget<HomeViewModel> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Expanded(
-                    flex: 2,
                     child: Text(
                       name,
                       style: kRubikText.copyWith(
@@ -51,26 +53,28 @@ class SubScriptionTile extends ViewModelWidget<HomeViewModel> {
                           color: const Color(0xFFEBEBF0)),
                     ),
                   ),
-                  Expanded(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        child: Text(
                           "$currency$price",
                           style: kRubikText.copyWith(
                               fontSize: 20.sp,
                               fontWeight: FontWeight.w500,
                               color: const Color(0xFFEBEBF0)),
                         ),
-                        Text(
+                      ),
+                      Flexible(
+                        child: Text(
                           "/$duration months",
                           style: kRubikText.copyWith(
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w300,
                               color: const Color(0xFFEBEBF0)),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ],
               ),

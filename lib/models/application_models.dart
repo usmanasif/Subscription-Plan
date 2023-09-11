@@ -24,18 +24,30 @@ Subscriptions subscriptionsFromJson(String str) =>
 String subscriptionsToJson(Subscriptions data) => json.encode(data.toJson());
 
 class Subscriptions {
+  String plan;
+  String date;
+  int daysLeft;
   List<Subscription> subscriptions;
 
   Subscriptions({
+    required this.plan,
+    required this.date,
+    required this.daysLeft,
     required this.subscriptions,
   });
 
   factory Subscriptions.fromJson(Map<String, dynamic> json) => Subscriptions(
+        plan: json["plan"],
+        date: json["date"],
+        daysLeft: json["daysLeft"],
         subscriptions: List<Subscription>.from(
             json["subscriptions"].map((x) => Subscription.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
+        "plan": plan,
+        "date": date,
+        "daysLeft": daysLeft,
         "subscriptions":
             List<dynamic>.from(subscriptions.map((x) => x.toJson())),
       };
