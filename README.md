@@ -43,5 +43,11 @@ lib/
 |- ui
   |- [screen_name]/
   |- shared/
+|- utils
 |- main.dart
 ```
+
+
+## Custom Features
+Custom dialogs added to make user experience seemless
+
