@@ -4,8 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../utils/app_text.dart';
 
 class ActivationUpgradeButton extends StatelessWidget {
+  final void Function()? onPressed;
+  final String title;
   const ActivationUpgradeButton({
     super.key,
+    this.onPressed,
+    required this.title,
   });
 
   @override
@@ -20,9 +24,9 @@ class ActivationUpgradeButton extends StatelessWidget {
             style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all(const Color(0xFF00B4AF))),
-            onPressed: () {},
+            onPressed: onPressed,
             child: Text(
-              "ACTIVATE/UPDATE PLAN",
+              title,
               style: kRubikText.copyWith(
                   color: Colors.white, fontWeight: FontWeight.w400),
             )),

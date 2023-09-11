@@ -12,6 +12,7 @@ import '../../app/app.locator.dart';
 
 class HomeViewModel extends BaseViewModel {
   final log = getLogger('HomeViewModel');
+  final _dialogService = locator<DialogService>();
   final _subscriptionService = locator<SubscriptionService>();
   final _navigationService = locator<NavigationService>();
   Subscriptions? _subscriptions;
@@ -47,5 +48,14 @@ class HomeViewModel extends BaseViewModel {
   void setSelectedIndex(int index) {
     _selectedIndex = index;
     notifyListeners();
+  }
+
+  showConfirmationMessage() {
+    _dialogService.showDialog(
+      title:
+          '${_subscriptions?.subscriptions[_selectedIndex].name ?? ''} Plan Subscribed',
+      description:
+          'You just subscribed to ${_subscriptions?.subscriptions[_selectedIndex].name ?? ''} plan',
+    );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_stacked_starter/utils/shared/setup_dialog.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 import 'app/app.locator.dart';
@@ -7,6 +8,7 @@ import 'app/app.router.dart';
 
 void main() {
   setupLocator();
+  setupDialogUi();
   runApp(const MyApp());
 }
 

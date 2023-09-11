@@ -13,6 +13,7 @@ import 'package:stacked_services/stacked_services.dart';
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: DioService, asType: ApiService),
     LazySingleton(classType: SubscriptionService),
+    LazySingleton(classType: DialogService),
   ],
   logger: StackedLogger(),
 )

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_stacked_starter/constants/constants.dart';
 import 'package:flutter_stacked_starter/ui/home/home_viewmodel.dart';
-import 'package:flutter_stacked_starter/ui/home/widgets/activation_upgrade_button.dart';
 import 'package:flutter_stacked_starter/ui/home/widgets/plans_list.dart';
 import 'package:flutter_stacked_starter/ui/home/widgets/plans_title.dart';
 import 'package:flutter_stacked_starter/ui/home/widgets/subscription_expiration.dart';
@@ -56,7 +55,6 @@ class HomeView extends StackedView<HomeViewModel> {
                   SubscriptionDetails(),
                   PlansTitle(),
                   PlansList(),
-                  ActivationUpgradeButton()
                 ],
               ),
       ),
