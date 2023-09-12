@@ -12,10 +12,10 @@ Flutter & Dart
 
 The app is built using the Model-View-ViewModel (MVVM) architecture pattern. Here's a brief overview of the different layers:
 
-Model: The data layer that represents the app's data and business logic. In this app, the models are the API Response and Subscriptions.
-View: The UI layer that displays the data to the user and handles user input. In this app, the views are implemented using Stacked Views which inturn use Provider.
-ViewModel: The glue layer that connects the view and the model. The view model handles the business logic and provides the data to the view. The viewmodel access the services such as API Service and Subscription Service.
-Services: Services are used to access other services. In this app, the api_service calls the dio_service.
+- Model: The data layer that represents the app's data and business logic. In this app, the models are the API Response and Subscriptions.
+- View: The UI layer that displays the data to the user and handles user input. In this app, the views are implemented using Stacked Views which inturn use Provider.
+- ViewModel: The glue layer that connects the view and the model. The view model handles the business logic and provides the data to the view. The viewmodel access the services such as API Service and Subscription Service.
+- Services: Services are used to access other services. In this app, the api_service calls the dio_service.
 
 
 ## Usage
