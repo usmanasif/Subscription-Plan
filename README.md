@@ -3,10 +3,8 @@
 Introducing Subscription Plan: Your iOS app to subscribe to a particular plan. Crafted with Flutter, this app, built on the MVVM architecture, empowers you with to subscribe to Basic, Standard and Premium Subscriptions. Explore an array of features, get rates in different currencies with different durations and be notified with your plan expiration on the go.
 
 ## Demo Video
-
-<p align="center">
 https://github.com/usmanasif/Subscription-Plan/assets/473630/d9aa8880-24f0-4845-b4d7-cf77335043da
-</p>
+
 ## Requirements
 Flutter & Dart
 
